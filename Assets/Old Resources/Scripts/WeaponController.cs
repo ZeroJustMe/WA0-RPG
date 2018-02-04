@@ -26,7 +26,7 @@ public class WeaponController : MonoBehaviour {
 
                 Player.SetBool("PA", true);
                 Player.SetBool("Boom", false);
-                GameObject pa = Instantiate(Resources.Load("Prefebs/PA") as GameObject) as GameObject;
+                GameObject pa = Instantiate(Resources.Load("/Prefebs/PA") as GameObject) as GameObject;
                 Vector3 PAPosition =wpPosition - new Vector3(0.2f,0,0);
                 pa.transform.localPosition = PAPosition;
                 lastFiretime = Time.time;
@@ -36,7 +36,7 @@ public class WeaponController : MonoBehaviour {
             if (Time.time > lastFiretime + CooldownBoom) {
                 Player.SetBool("Boom", true);
                 Player.SetBool("PA", false);
-                GameObject boom = Instantiate(Resources.Load("Prefebs/Boom") as GameObject) as GameObject;
+                GameObject boom = Instantiate(Resources.Load("/Prefebs/Boom") as GameObject) as GameObject;
                 boom.transform.localPosition = wpPosition;
                 lastFiretime = Time.time;
             }
